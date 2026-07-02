@@ -7,10 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.basicpromptappwithclaude.ui.prompt.PromptScreen
 import com.example.basicpromptappwithclaude.ui.theme.BasicPromptAppWithClaudeTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +18,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             BasicPromptAppWithClaudeTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    PromptScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier.Companion) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BasicPromptAppWithClaudeTheme {
-        Greeting("Android")
     }
 }
